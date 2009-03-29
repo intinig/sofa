@@ -12,8 +12,10 @@
     <!-- form to create a post -->
     <form id="new-post" action="new.html" method="post">
       <h1>Create a new post</h1>
-        <p><label>Title</label>
-          <input type="text" size="50" name="title" value=""></p>
+      <p><label>Season</label><input type="text" size="50" name="season" value=""></p>
+      <p><label>Episode</label><input type="text" size="50" name="episode" value=""></p>
+      <p><label>Title</label><input type="text" size="50" name="title" value=""></p>
+      <p><label>Video</label><input type="text" size="50" name="video" value=""></p>
       <p><label for="body">Body</label>
       <textarea name="body" rows="28" cols="80"></textarea></p>
       <p>
@@ -49,7 +51,7 @@
 
         var postForm = app.docForm("form#new-post", {
           id : <%= docid %>,
-          fields : ["title", "body", "tags"],
+          fields : ["season", "episode", "title", "video", "body", "tags"],
           template : {
             type : "post",
             format : "markdown",

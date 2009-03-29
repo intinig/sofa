@@ -6,21 +6,23 @@
   </head>
   <body>
     <div id="header">
-      <a id="edit" href="<%= editPostPath %>">Edit this post</a>
+      <a id="edit" href="<%= editPostPath %>">Edit this episode</a>
       <h2><a href="<%= index %>"><%= blogName %></a></h2>
     </div>
     <div id="content">
       <h1><%= title %></h1>
       <div id="post">
         <span class="date"><%= date %></span>
-        <div class="body"><%= post %></div>
+        <div class="body"><%= post %></br>
+          <%= video %>
+          </div>
       </div>
       <div id="tags"></div>
       <div id="comments">
       <ul></ul>
       <!-- form to create a comment -->
       <form id="new-comment" action="post.html" method="post">
-        <h3>Comment on this post</h3>
+        <h3>Comment on this episode</h3>
         <p><label>Name</label>
         <input type="text" name="commenter-name" value=""></p>
         <p><label>Url <em>(optional)</em></label>

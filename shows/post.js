@@ -13,6 +13,9 @@ function(doc, req) {
     author : doc.author,
     assets : assetPath(),
     editPostPath : showPath('edit', doc._id),
-    index : listPath('index','recent-posts',{descending:true, limit:5})
+		season : doc.season,
+		episode : doc.episode,
+		video : doc.video,
+    index : listPath('index','recent-posts',{})
   });
 }

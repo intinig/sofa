@@ -5,8 +5,8 @@ function(head, row, req, info) {
   // !code vendor/couchapp/date.js
   // !code vendor/couchapp/template.js
 
-  var indexPath = listPath('index','recent-posts',{descending:true, limit:5});
-  var feedPath = listPath('index','recent-posts',{descending:true, limit:5, format:"atom"});
+  var indexPath = listPath('index','recent-posts',{descending:false, limit:5});
+  var feedPath = listPath('index','recent-posts',{descending:false, limit:5, format:"atom"});
   return respondWith(req, {
     html : function() {
       if (head) {
@@ -24,6 +24,8 @@ function(head, row, req, info) {
           summary : post.summary,
           date : post.created_at,
           link : showPath('post', row.id),
+					season : row.key[0],
+					episode : row.key[1],
           assets : assetPath()
         });
       } else {
